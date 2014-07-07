@@ -1,0 +1,8 @@
+{% set snmp = salt['grains.filter_by']({
+    'Debian': {
+        'snmpd': 'snmpd',
+    },
+    'RedHat': {
+        'snmpd': 'snmpd',
+    },
+}, merge=salt['pillar.get']('snmp:lookup')) %}
